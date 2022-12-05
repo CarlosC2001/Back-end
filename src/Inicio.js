@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import { async } from '@firebase/util';
+import React, { useEffect, useState } from 'react';
 import { listaRestaurante } from './Restaurantes';
+
 
 export const Inicio = () => {
     const [Restaurante, setRestaurante] = useState(listaRestaurante);
+    
 
     return (
         <div className="container container-fluid mt-3 mb-3 ">

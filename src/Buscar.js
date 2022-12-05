@@ -7,9 +7,8 @@ const Buscar = () => {
     const { nombre = ''} = valoresFormulario;
     const [resultado, setResultado] = useState([]);
 
-    // permite asignar los valores del formulario a la variable de estado  formValues
     const handleOnChange = (e) => {
-        //console.log(e);
+
         console.log(e.target.name, e.target.value);
         if (e.target.name === 'nombre') {
             setValoresFormulario({ ...valoresFormulario, nombre: e.target.value });
@@ -19,9 +18,9 @@ const Buscar = () => {
         console.log(valoresFormulario);
     }
 
-    // pinta los valores del formulario cuando presionan el boton
+
     const handleOnSubmit = (e) => {
-        e.preventDefault(); // evita que se recargue el formulario
+        e.preventDefault(); 
         console.log('estoy haciendo click');
         const filtro = listaRestaurante
             .filter(rest => rest.nombre.toUpperCase().includes(nombre.toUpperCase()));

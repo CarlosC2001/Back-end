@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { crearProducto } from './Service';
 
 export const Nuevo = () => {
 
@@ -11,9 +12,15 @@ export const Nuevo = () => {
   }
 
   
-  const handleOnSubmit = (e) => {
+  const handleOnSubmit = async (e) => {
     e.preventDefault(); 
     console.log(valoresFormulario);
+    try {
+        await crearProducto(valoresFormulario);
+        console.log('Creado desde la pagina nuevo producto');
+      } catch (error) {
+        console.log(error);
+      }
   }
 
   return (
